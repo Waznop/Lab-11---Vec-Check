@@ -68,7 +68,7 @@ This tests `lookup_index()` and `lookup_info()`.
   };
   ```
 
-1. If you want to look up Alice's info for the first test case, `expected_index` would be 0 since Alice's info is stored at index 0. `expected_lookup_info` is `true` because `lookup_info` should be able to find her info. Then her expected address, phone, and email are the address, phone, and email stored in the contacts list. So you would write the following:
+2. If you want to look up Alice's info for the first test case, `expected_index` would be 0 since Alice's info is stored at index 0. `expected_lookup_info` is `true` because `lookup_info` should be able to find her info. Then her expected address, phone, and email are the address, phone, and email stored in the contacts list. So you would write the following:
   ```c++
   string name1 = "Alice";
   int expected_index1 = 0;
@@ -78,7 +78,7 @@ This tests `lookup_index()` and `lookup_info()`.
   string expected_email1 = "alice@fakeemail.com";
   ```
 
-1. If you want to use the name `"Charlie"` for the second test case, `expected_index` is -1 and `expected_lookup_info` is `false` since there is no one named Charlie in `contacts`. Then you would just leave the expected address/phone/email as `""`.
+3. If you want to use the name `"Charlie"` for the second test case, `expected_index` is -1 and `expected_lookup_info` is `false` since there is no one named Charlie in `contacts`. Then you would just leave the expected address/phone/email as `""`.
   ```c++
   string name2 = "Charlie";
   int expected_index2 = -1;
@@ -108,9 +108,9 @@ This tests `update_address()`, `update_phone()` and `update_email()`.
   };
   ```
 
-1. If you want to change Alice's phone number to `"(111)111-1111"`, then you would call `update_phone(contacts, "Alice", "(111)111-1111");`. Afterwards, you should write at least 4 more function calls and make sure that the other two functions get called at least once.
+2. If you want to change Alice's phone number to `"(111)111-1111"`, then you would call `update_phone(contacts, "Alice", "(111)111-1111");`. Afterwards, you should write at least 4 more function calls and make sure that the other two functions get called at least once.
 
-1. For this example with just a single function call, the only thing that should change in the contacts list is Alice's phone number. Everything else remains the same:
+3. For this example with just a single function call, the only thing that should change in the contacts list is Alice's phone number. Everything else remains the same:
   ```c++
   vector<vector<string>> expected_contacts = {
     {"Alice", "123 Main Street", "(111)111-1111", "alice@fakeemail.com"},
@@ -139,7 +139,7 @@ This tests `add_contact()`.
   };
   ```
 
-1. If you want to add someone named Charlie with the address `"999 A Street"`, phone number `"(888)888-8888"`, and email address `"charlie@fakeemail.com"`, You should expect this function call to succeed because there's nobody named Charlie in the contacts list. So the first test case would look like this:
+2. If you want to add someone named Charlie with the address `"999 A Street"`, phone number `"(888)888-8888"`, and email address `"charlie@fakeemail.com"`, You should expect this function call to succeed because there's nobody named Charlie in the contacts list. So the first test case would look like this:
   ```c++
   string name1 = "Charlie";
   string address1 = "999 A Street";
@@ -148,7 +148,7 @@ This tests `add_contact()`.
   bool expected_result1 = true;
   ```
 
-1. If you want to add another person named Charlie, you should expect this function call to fail because there is already someone named Charlie in the contacts list after the previous addition. So the second test case could look like this:
+3. If you want to add another person named Charlie, you should expect this function call to fail because there is already someone named Charlie in the contacts list after the previous addition. So the second test case could look like this:
   ```c++
   string name2 = "Charlie";
   string address2 = "12345 Somewhere Road";
@@ -157,7 +157,7 @@ This tests `add_contact()`.
   bool expected_result2 = false;
   ```
 
-1. For this example with just 2 function calls, the contacts list should end up having the first Charlie's information but not the second:
+4. For this example with just 2 function calls, the contacts list should end up having the first Charlie's information but not the second:
   ```c++
   vector<vector<string>> expected_contacts = {
     {"Alice", "123 Main Street", "(123)456-7890", "alice@fakeemail.com"},
@@ -278,9 +278,9 @@ This tests `delete_contact()`.
   };
   ```
 
-1. If you call `delete_contact(contacts, "Charlie");`, the `contacts` vector shouldn't change because there is nobody to delete. If you call `delete_contact(contacts, "Alice");`, then the vector should only contain Bob's info after the function returns.
+2. If you call `delete_contact(contacts, "Charlie");`, the `contacts` vector shouldn't change because there is nobody to delete. If you call `delete_contact(contacts, "Alice");`, then the vector should only contain Bob's info after the function returns.
 
-1. For this example, after these 2 function calls, only Bob's info remains in the contacts list:
+3. For this example, after these 2 function calls, only Bob's info remains in the contacts list:
   ```c++
   vector<vector<string>> expected_contacts = {
     {"Bob", "1111 Blahblahblah Road", "(999)999-9999", "bob@fakeemail.com"}.
