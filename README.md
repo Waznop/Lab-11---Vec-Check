@@ -1,4 +1,4 @@
-# Lab 11: Vec Check
+# Lab 11: Vectory Achieved
 
 In this lab, you will learn how to:
 - use vectors
